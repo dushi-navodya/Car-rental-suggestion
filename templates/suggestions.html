@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Suggestions</title>
+</head>
+<body>
+    <h1>Car Suggestions</h1>
+    {% if cars %}
+        {% for car in cars %}
+            <div>
+                <h2>{{ car.make }} {{ car.model }}</h2>
+                <img src="{{ car.image_url }}" alt="{{ car.make }} {{ car.model }}">
+                <p>Price: ${{ car.price }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No cars available for the specified model.</p>
+    {% endif %}
+    <a href="/">Go back</a>
+</body>
+</html>
